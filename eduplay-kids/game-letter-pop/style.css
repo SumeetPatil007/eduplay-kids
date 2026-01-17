@@ -1,0 +1,123 @@
+body {
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec); /* Bubble-like gradient */
+  margin: 0;
+  padding: 20px;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h2 {
+  color: #ff5722;
+  font-size: 2em;
+}
+
+#letter {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+#score {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+#timer-bar {
+  width: 80%;
+  max-width: 300px;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+#timer-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff5722, #ff9800);
+  width: 100%;
+  transition: width 1s linear;
+}
+
+#letters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  min-height: 150px;
+}
+
+.bubble {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8), rgba(0,0,0,0.1));
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: relative;
+  animation: float 3s ease-in-out infinite; /* Subtle floating */
+  border: 3px solid transparent;
+}
+
+.bubble:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.pop-correct {
+  animation: pop 0.5s ease-in-out forwards;
+  background: #4CAF50 !important;
+  color: white;
+}
+
+.pop-incorrect {
+  animation: pop 0.5s ease-in-out forwards;
+  background: #f44336 !important;
+  color: white;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.8; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+button {
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #e64a19;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .bubble {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  #letters {
+    gap: 10px;
+  }
+}

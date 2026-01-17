@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treasure Memory Quest</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>🧠 Treasure Memory Quest</h2>
+<p id="instruction" aria-live="polite">Click Start to begin your quest!</p>
+<p id="score">Score: 0 | Streak: 0 | Treasures: 0</p>
+<div id="timer-bar"><div id="timer-fill"></div></div>
+<div id="treasures" role="list" aria-label="Collected treasures"></div>
+<div id="grid"></div>
+
+<button id="start-btn" onclick="startGame()">🚀 Start Quest</button>
+<button id="level-btn" onclick="nextLevel()" style="display:none;">Next Quest 🌟</button>
+
+<script src="script.js"></script>
+</body>
+</html>

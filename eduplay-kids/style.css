@@ -1,0 +1,69 @@
+body {
+  font-family: 'Comic Sans MS', cursive, Arial, sans-serif; /* More playful font stack */
+  text-align: center;
+  background: linear-gradient(135deg, #f0f8ff, #ffe4e1); /* Subtle gradient background */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(45deg, #4CAF50, #66BB6A); /* Gradient header */
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  flex-grow: 1;
+}
+
+.games a {
+  text-decoration: none;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: #333;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120px; /* Consistent height */
+}
+
+.games a:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+footer {
+  background: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .games {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
